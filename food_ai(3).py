@@ -664,23 +664,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# 3. Build it:
-#       pyinstaller --onefile --windowed --name "Food AI" food_ai.py
-#
-# 4. Wait for it to finish (can take a few minutes). When done, look inside
-#    the new "dist" folder — you'll find "Food AI.app". That's your real,
-#    double-clickable application. No code is visible; it behaves like any
-#    other Mac app icon.
-#
-# 5. (Optional) Drag "Food AI.app" into your Applications folder, or the
-#    Dock, so it's always easy to open.
-#
-# 6. The first time you open it, macOS may block it ("unidentified
-#    developer"). Right-click the app, choose "Open", then click "Open"
-#    again in the popup. You only need to do this once.
-#
-# 7. Double-clicking the app opens a "choose a photo" window directly —
-#    no terminal, no code. Pick a photo, wait a few seconds, and the
-#    result opens in your browser automatically.
-# ---------------------------------------------------------------------------
