@@ -519,7 +519,7 @@ class FoodAIApp:
             wrapper, text="📷  Select a Photo", font=("Helvetica", 13, "bold"),
             fg=BG_NIGHT, bg=SAFFRON, activebackground=SAFFRON_HOVER,
             activeforeground=BG_NIGHT, relief="flat", bd=0,
-            padx=24, pady=12, cursor="pointinghand",
+            padx=24, pady=12, cursor="hand2",
             command=self.on_choose_photo,
         )
         self.select_button.pack()
