@@ -13,8 +13,6 @@ Running it with no arguments opens a native "choose a photo" window.
 You can also run it with a path directly:
     python3 food_ai.py path/to/photo.jpg
 
-HOW TO TURN THIS INTO A REAL APP (no code visible, just double-click):
-    See the instructions at the very bottom of this file.
 """
 
 import sys
@@ -465,10 +463,9 @@ def render_html(detected_ingredients: list[str], matches: list[dict]) -> str:
 </html>"""
 
 
-# ---------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------
 # 5. THE APP WINDOW (a proper welcome screen, not just a file dialog)
-# ---------------------------------------------------------------------------
-# Colors match the saffron / dark-kitchen theme used in the HTML report.
+# -------------------------------------------------------------------------------------------------
 BG_NIGHT = "#1b1a17"
 BG_NIGHT_SOFT = "#26241f"
 SAFFRON = "#d9a441"
@@ -642,8 +639,7 @@ class FoodAIApp:
 # ---------------------------------------------------------------------------
 
 def main():
-    # Running with a file path argument still works for quick command-line
-    # testing, without opening the window.
+    
     if len(sys.argv) >= 2:
         image_path = sys.argv[1]
         if not Path(image_path).exists():
@@ -660,7 +656,7 @@ def main():
         webbrowser.open(f"file://{OUTPUT_HTML.resolve()}")
         return
 
-    # No argument given -> launch the full app window
+
     root = tk.Tk()
     FoodAIApp(root)
     root.mainloop()
@@ -669,19 +665,6 @@ def main():
 if __name__ == "__main__":
     main()
 
-# ---------------------------------------------------------------------------
-# HOW TO TURN THIS FILE INTO A REAL, DOUBLE-CLICKABLE APP (macOS)
-# ---------------------------------------------------------------------------
-# You need to run these commands on YOUR OWN Mac (this can't be built
-# remotely — the app has to be built on the same type of computer it will
-# run on).
-#
-# 1. Open Terminal and go to the folder with this file:
-#       cd path/to/this/folder
-#
-# 2. Install the tool that builds the app:
-#       pip3 install pyinstaller
-#
 # 3. Build it:
 #       pyinstaller --onefile --windowed --name "Food AI" food_ai.py
 #
